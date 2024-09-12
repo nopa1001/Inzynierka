@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedules",
+  "info": {
+    "singularName": "schedule",
+    "pluralName": "schedules",
+    "displayName": "schedule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_from": {
+      "type": "datetime"
+    },
+    "date_to": {
+      "type": "datetime"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "schedules"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "WORK"
+      ],
+      "default": "WORK"
+    }
+  }
+}

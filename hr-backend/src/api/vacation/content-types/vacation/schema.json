@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacations",
+  "info": {
+    "singularName": "vacation",
+    "pluralName": "vacations",
+    "displayName": "Vacation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "vacations"
+    },
+    "date_from": {
+      "type": "datetime"
+    },
+    "date_to": {
+      "type": "datetime"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "SICK_LEAVE",
+        "VACATION"
+      ]
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "REJECTED",
+        "APPROVED",
+        "PENDING"
+      ]
+    }
+  }
+}
